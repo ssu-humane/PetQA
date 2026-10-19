@@ -7,9 +7,6 @@ from utils.config import PROJECT_ROOT
 from utils.io import load_json
 
 
-DATA_ACCESS_GUIDANCE = (
-    "Approved data is required. See data/instructions.md for the application process."
-)
 IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp")
 
 
