@@ -1,0 +1,46 @@
+You will be given a question, a reference answer, and a predicted answer.
+Please verify the factual correctness of the predicted answer by comparing it with the reference answer, following these steps:
+1. Break down the predicted answer into independent factual statements. Each fact should be a separate sentence.
+2. Evaluate each fact individually: determine whether the fact is supported by the reference answer. Do not use external knowledge or additional background knowledge.
+3. Next, break down the reference answer into independent factual statements. Each fact should be a separate sentence.
+4. Evaluate each fact individually: determine whether the fact is supported by the predicted answer. Do not use external knowledge or additional background knowledge.
+5. Finally, summarize (1) how many predicted facts are supported by the reference answer and (2) how many reference facts are supported by the predicted answer.
+
+Generate the output in JSON format as shown in the examples below.
+
+### Examples
+Question: My dog is a poodle and is currently 6 months old. All baby teeth have fallen out except the canine teeth. They are not loose at all, and permanent teeth are growing right next to them. What should I do?
+Reference Answer: Deciduous teeth in dogs are generally known to fall out between 5 and 9 months of age. It would be reasonable to wait until around 10 months of age. If the teeth have not fallen out after 10 months, extraction at a veterinary clinic may be necessary. At this stage, it is common for deciduous and permanent teeth to coexist, so there is no need for excessive concern, and it would be advisable to wait a little longer.
+Predicted Answer: It is relatively common for permanent canine teeth to erupt while the baby canine teeth have not yet fallen out. In such cases, the deciduous teeth may not fall out naturally, so if the canine teeth are not loose, it is recommended to consult a veterinarian. The veterinarian can examine the cause and remove the retained teeth if necessary. If left untreated, dental alignment problems may occur, so early consultation is important.
+Output:
+{{
+    "facts_in_predicted_answer": "1. It is relatively common for permanent canine teeth to erupt while the baby canine teeth have not yet fallen out. 2. Deciduous teeth may not fall out naturally. 3. If the canine teeth are not loose, it is recommended to consult a veterinarian. 4. A veterinarian can examine the cause and remove the retained teeth if necessary. 5. If left untreated, dental alignment problems may occur, so early consultation is important.",
+    "fact_check_predicted_answer": "1. Supported. The reference answer states that deciduous and permanent teeth can coexist at this stage. 2. Insufficient information. The reference answer implies retained deciduous teeth may require extraction, but does not explicitly state they may fail to fall out naturally. 3. Supported. The reference answer recommends visiting a veterinary clinic if the teeth do not fall out after 10 months. 4. Supported. The reference answer mentions that extraction may be necessary. 5. Insufficient information. The reference answer does not mention dental alignment problems.",
+    "facts_count_predicted_answer": 5,
+    "support_predicted_answer": 3,
+    "facts_in_reference_answer": "1. Deciduous teeth in dogs generally fall out between 5 and 9 months of age. 2. It is reasonable to wait until around 10 months of age. 3. If the teeth have not fallen out after 10 months, extraction may be necessary. 4. Deciduous and permanent teeth can coexist at this stage. 5. There is no need for excessive concern, and it is advisable to wait a little longer.",
+    "fact_check_reference_answer": "1. Insufficient information. The predicted answer does not mention the age range of 5 to 9 months. 2. Insufficient information. The predicted answer does not explicitly recommend waiting until 10 months. 3. Supported. The predicted answer recommends veterinary consultation and possible removal if necessary. 4. Supported. The predicted answer states that permanent teeth can erupt while deciduous teeth remain. 5. Insufficient information. The predicted answer emphasizes early consultation rather than waiting.",
+    "facts_count_reference_answer": 5,
+    "support_reference_answer": 2
+}}
+
+Question: I have a female cat. Is it okay to keep her for her entire life without spaying her?
+Reference Answer: Both male and female dogs and cats need neutering or spaying surgery. In males, it prevents reproductive diseases such as behavioral disorders, prostatitis, prostate cancer, and perianal adenoma. In females, it can prevent reproductive diseases such as heat cycles, mammary tumors, pyometra, and ovarian tumors. In cases of irregular heat cycles, the risk increases, so spaying surgery is even more important, and it also helps prevent running away and helps moderate temperament. In general, neutering or spaying surgery is performed around 7 months of age.
+Predicted Answer: Keeping a female cat without spaying her can involve several risks. First, repeated heat cycles can cause stress. Second, abnormal behavior or noise may occur. Third, an unspayed female cat has a higher chance of developing health problems such as pyometra or mammary tumors. Therefore, considering spaying is good for the cat's health and welfare.
+Output:
+{{
+    "facts_in_predicted_answer": "1. Keeping a female cat without spaying her can involve several risks. 2. Repeated heat cycles can cause stress. 3. Abnormal behavior or noise may occur. 4. An unspayed female cat has a higher chance of developing health problems such as pyometra or mammary tumors. 5. Considering spaying is good for the cat's health and welfare.",
+    "fact_check_predicted_answer": "1. Supported. The reference answer states that spaying is needed for females and can prevent reproductive diseases. 2. Insufficient information. The reference answer does not directly mention stress caused by repeated heat cycles, although it mentions heat cycles and behavioral effects. 3. Supported. The reference answer mentions prevention of behavioral disorders and temperament moderation. 4. Supported. The reference answer states that spaying can prevent pyometra and mammary tumors in females. 5. Supported. The reference answer states that spaying prevents reproductive diseases and provides additional benefits.",
+    "facts_count_predicted_answer": 5,
+    "support_predicted_answer": 4,
+    "facts_in_reference_answer": "1. Both male and female dogs and cats need neutering or spaying surgery. 2. In males, neutering prevents reproductive diseases such as behavioral disorders, prostatitis, prostate cancer, and perianal adenoma. 3. In females, spaying can prevent reproductive diseases such as heat cycles, mammary tumors, pyometra, and ovarian tumors. 4. In cases of irregular heat cycles, the risk increases, so spaying surgery is even more important. 5. Neutering or spaying also helps prevent running away and helps moderate temperament. 6. In general, neutering or spaying surgery is performed around 7 months of age.",
+    "fact_check_reference_answer": "1. Supported. The predicted answer states that not spaying a female cat can involve risks and that spaying should be considered. 2. Insufficient information. The predicted answer focuses on a female cat and does not mention males. 3. Supported. The predicted answer mentions a higher chance of pyometra and mammary tumors in an unspayed female cat. 4. Insufficient information. The predicted answer does not mention irregular heat cycles. 5. Insufficient information. The predicted answer mentions abnormal behavior or noise, but does not mention preventing running away or moderating temperament. 6. Insufficient information. The predicted answer does not mention the timing of surgery.",
+    "facts_count_reference_answer": 6,
+    "support_reference_answer": 2
+}}
+
+### Input:
+Question: {question}
+Reference Answer: {gold_answer}
+Predicted Answer: {pred_answer}
+Output:

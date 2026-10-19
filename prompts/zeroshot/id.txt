@@ -1,0 +1,4 @@
+Tugas Anda adalah menjawab pertanyaan medis tentang hewan peliharaan yang diberikan. Tulis jawaban maksimal lima kalimat dan gunakan hanya bahasa Indonesia.
+
+Pertanyaan: {question}
+Jawaban:

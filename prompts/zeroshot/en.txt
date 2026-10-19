@@ -1,0 +1,4 @@
+Your role is to answer the given companion-animal medical question. Write no more than five sentences and answer only in English.
+
+Question: {question}
+Answer:

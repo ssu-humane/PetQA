@@ -1,0 +1,54 @@
+You are an expert at evaluating the quality of text.
+As an impartial evaluator, please assess how useful the AI assistant's response is to the user's question.
+Specifically, evaluate the following criteria: 1) relevance to the question; 2) whether it meets the user's purpose and needs; 3) whether it provides a sufficient and appropriate answer.
+You must first provide an analysis, and then strictly assign a score between 1 and 5 in the following format: "[[Rating]]", e.g., "[[5]]".
+
+Here are a few scoring examples:
+[Question]
+My 4-year-old Yorkshire Terrier ate about one small spoonful of chocolate whipped cream. What should I do?
+
+[Assistant's Answer Begins]
+Chocolate whipped cream contains chocolate ingredients, and theobromine found in chocolate can be toxic to dogs. Since Yorkshire Terriers are small dogs weighing around 2~3 kg, even a small amount may have a relatively greater effect based on body weight, so caution is necessary. However, if the dog consumed only about one small spoonful of chocolate whipped cream, the risk of severe intoxication is relatively low compared to pure chocolate because the theobromine concentration is lower. Please closely monitor for symptoms such as vomiting, diarrhea, excessive excitement, increased heart rate, or tremors over the next 6-12 hours. If any symptoms appear, visit a veterinary clinic immediately. Even if no symptoms occur, it is advisable to contact a veterinarian, inform them of the amount consumed and the dog's body weight, and seek guidance. Do not induce vomiting on your own, and follow a veterinarian's instructions.
+[Assistant's Answer Ends]
+
+[Analysis]
+The response directly addresses the user's question with very high relevance and usefulness. It specifically explains the cause of chocolate toxicity (theobromine) and notes that even a small amount requires caution given the Yorkshire Terrier's small body weight. While realistically assessing the risk level based on the amount consumed, it provides actionable guidance by specifying concrete symptoms to monitor and a timeframe (6-12 hours). It also includes precautions against improper responses such as not inducing vomiting without veterinary guidance, making it a comprehensive and accurate answer the user can immediately act upon.
+
+Rating: [[5]]
+
+
+[Question]
+My dog trembles and tries to be held, and when I hold the dog, it pants for more than 30 minutes. A recent hospital visit suggested that the symptoms could be due to a disc problem or pain, so X-rays and blood tests were performed, but no abnormalities were found. A week's worth of powdered steroid medication was prescribed, but the symptoms are the same. Since December, the dog has often smelled the anal area, and since mid-January, it seems to smell that area even after defecating. Could anal discomfort be causing the trembling and panting? The steroid is not working, so should I keep giving it? Are there cases where X-rays cannot identify the cause, and should I go to a larger hospital?
+
+[Assistant's Answer Begins]
+Discomfort around the anal area can cause a dog to tremble and pant. If the steroid medication is not effective, it may be necessary to consider other medications or treatments. Since there are cases where X-rays cannot identify the cause, it would be good to visit a large hospital or specialist hospital for a professional diagnosis.
+[Assistant's Answer Ends]
+
+[Analysis]
+The response provides some relevant information related to the dog's symptoms and suggests the possibility of anal discomfort. However, it does not sufficiently address key concerns such as steroid effectiveness, the need for additional tests, and whether to visit a larger hospital. While it mentions the limitations of X-ray, it lacks specific guidance on alternative examinations or treatments. Overall, the response aligns with the question but is not sufficiently specific or complete.
+
+Rating: [[3]]
+
+
+[Question]
+Since yesterday, my dog has been trying to stay seated and cannot walk well. When walking, the hind legs looked awkward, so I went to the hospital. The hospital said there was no problem with the hind legs and that it could be related to the spine or brain, so I should go to a larger hospital. When I slowly massaged along the spine at home, the flesh around the middle of the spine felt tense, and the dog seemed to be in pain when I touched that area. Could this be a disc symptom? There has been no particular fall, injury, or drop.
+
+[Assistant's Answer Begins]
+Difficulty walking in dogs may be a natural phenomenon that appears with age. Please maintain muscle strength through sufficient nutrition and appropriate walks, and giving joint supplements may also help. It is also good to place mats on slippery floors.
+[Assistant's Answer Ends]
+
+[Analysis]
+The response provides only generic health management advice that is largely irrelevant to the user's question. Despite the dog showing acute symptoms of sudden inability to walk and pain in the spinal area, the response dismisses it as a natural aging phenomenon, completely failing to reflect the severity of the situation. It entirely ignores the context that the veterinarian has already mentioned possible spine or brain issues and recommended visiting a larger hospital. It does not answer any of the user's specific questions about disc symptoms, the cause occurring without trauma, or the need to visit a specialist hospital. It even recommends walking for a dog that can barely walk, including advice inappropriate for the current situation, making it unhelpful to the user.
+
+Rating: [[1]]
+
+
+Now, please evaluate the following AI assistant's response based on the evaluation criteria and examples above:
+[Question]
+{question}
+
+[Assistant's Answer Begins]
+{pred_answer}
+[Assistant's Answer Ends]
+
+[Analysis]

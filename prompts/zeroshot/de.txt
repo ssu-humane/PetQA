@@ -1,0 +1,4 @@
+Ihre Aufgabe ist es, die gegebene medizinische Frage zu einem Haustier zu beantworten. Schreiben Sie höchstens fünf Sätze und antworten Sie ausschließlich auf Deutsch.
+
+Frage: {question}
+Antwort:
