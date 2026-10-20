@@ -3,9 +3,49 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2609.04598-b31b1b.svg)](https://arxiv.org/abs/2609.04598)
 [![Hugging Face](https://img.shields.io/badge/Hugging_Face-Dataset-FFD21E)](https://huggingface.co/datasets/humane-lab/PetQA)
 
-This repository provides the unified answer-generation and evaluation code for PetQA. For details about the benchmark and experiments, see our [paper](https://arxiv.org/abs/2609.04598). 
+PetQA is the first long-form question-answering dataset for evaluating veterinary knowledge and clinical reasoning about dogs and cats. It includes text-only and multimodal questions, paired with reference answers written by veterinarians verified by the source platform.
 
-The [dataset](https://huggingface.co/datasets/humane-lab/PetQA) is available on the Hugging Face Hub.
+This repository provides the unified answer-generation and evaluation code for PetQA. The [dataset](https://huggingface.co/datasets/humane-lab/PetQA) is available on the Hugging Face Hub. For details about the benchmark and experiments, see our [paper](https://arxiv.org/abs/2609.04598). 
+
+
+
+## 🐾 Dataset
+### Overview
+PetQA was collected from the pet medical consultation board of Naver Knowledge iN, covering posts published from 2014 to 2024. Preprocessing removed duplicate questions and posts with corrupted images. GPT-4o-mini was then used to filter irrelevant or uninformative content, personal information, promotional material, and noisy expressions while preserving essential clinical details.
+
+After preprocessing, the final dataset contains 18,827 question–answer pairs. We split each modality into training, validation, and test sets.
+
+| Modality | Train | Validation | Test | Total |
+|---|---:|---:|---:|---:|
+| Text | 6,076 | 2,000 | 2,000 | 10,076 |
+| Multimodal | 4,751 | 2,000 | 2,000 | 8,751 |
+| **Total** | **10,827** | **4,000** | **4,000** | **18,827** |
+
+The test sets for benchmarking experiments are referred to as **PetQA-Bench**. PetQA-Bench is annotated under expert-reviewed guidelines and used to benchmark models' veterinary knowledge and clinical reasoning. The training and validation sets are used for supervised fine-tuning.
+
+### PetQA-Bench annotation
+
+Each PetQA-Bench sample was annotated along two dimensions: **question type** and **clinical conditions**. These labels were designed to assess model performance across different clinical scenarios and determine whether model responses contain key clinical conditions.
+
+To assess data quality, a veterinary expert with a Ph.D. reviewed 100 randomly sampled question–answer pairs using two criteria: relevance and correctness. Relevance assessed whether each answer appropriately addressed the question, while correctness assessed its factual accuracy. The review found that 99% of the sampled answers were relevant and 85% were factually correct. These results support the overall reliability of the dataset.
+
+### Multilingual extension
+
+To broaden its global applicability, we used GPT-4o-mini to translate the original Korean benchmark into five additional languages: English, Chinese, German, Arabic, and Indonesian.
+
+
+
+
+## 📥 Dataset Usage
+
+```python
+from datasets import load_dataset
+
+data = load_dataset('humane-lab/PetQA')
+```
+The dataset is shared under the [CC BY-NC-ND 4.0 license](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+
 
 
 ## 🗂️ Repository Structure
