@@ -161,14 +161,20 @@ Evaluation commands use the same model, strategy, language, and `top_k` values a
 ## 📝 Citation
 
 ```bibtex
-@misc{kim2026petqa,
-  title         = {PetQA: Benchmarking Veterinary Knowledge and Clinical Reasoning},
-  author        = {Taegyun Kim and Youngwook Ham and Jungwook Rhim and
-                   Ju-Hyun An and Sungkyu Park and Kunwoo Park},
-  year          = {2026},
-  eprint        = {2609.04598},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CL},
-  url           = {https://arxiv.org/abs/2609.04598}
+@inproceedings{kim-etal-2026-petqa,
+    title = "{P}et{QA}: Benchmarking Veterinary Knowledge and Clinical Reasoning",
+    author = "Kim, Taegyun  and
+      Ham, Youngwook  and
+      Rhim, Jungwook  and
+      An, Ju-Hyun  and
+      Park, Sungkyu  and
+      Park, Kunwoo",
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.emnlp-main.2522/",
+    doi = "10.18653/2026.emnlp-main.2522",
+    pages = "57338--57365"
 }
 ```
