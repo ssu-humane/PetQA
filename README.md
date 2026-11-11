@@ -5,7 +5,7 @@
 
 PetQA is the first long-form question-answering dataset for evaluating veterinary knowledge and clinical reasoning about dogs and cats. It includes text-only and multimodal questions, paired with reference answers written by veterinarians verified by the source platform.
 
-This repository provides the unified answer-generation and evaluation code for PetQA. The [dataset](https://huggingface.co/datasets/humane-lab/PetQA) is available on the Hugging Face Hub. For details about the benchmark and experiments, see our [paper](https://arxiv.org/abs/2609.04598). 
+This repository provides the unified answer-generation and evaluation code for PetQA. The [dataset](https://huggingface.co/datasets/humane-lab/PetQA) is available on the Hugging Face Hub. For details about the benchmark and experiments, see our [paper](https://aclanthology.org/2026.emnlp-main.2522/). 
 
 
 
