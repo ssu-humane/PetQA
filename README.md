@@ -1,6 +1,6 @@
 # PetQA: Benchmarking Veterinary Knowledge and Clinical Reasoning
 
-[![arXiv](https://img.shields.io/badge/arXiv-2609.04598-b31b1b.svg)](https://arxiv.org/abs/2609.04598)
+[![ACL Anthology](https://img.shields.io/badge/ACL%20Anthology-EMNLP%202026-blue)](https://aclanthology.org/2026.emnlp-main.2522/)
 [![Hugging Face](https://img.shields.io/badge/Hugging_Face-Dataset-FFD21E)](https://huggingface.co/datasets/humane-lab/PetQA)
 
 PetQA is the first long-form question-answering dataset for evaluating veterinary knowledge and clinical reasoning about dogs and cats. It includes text-only and multimodal questions, paired with reference answers written by veterinarians verified by the source platform.
